@@ -1,9 +1,62 @@
 <html>
+
 <head>
-<title>{{ title }} - Page</title>
+<style>
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(64, 144, 235);
+}
+        
+li {
+    float: left;
+}
+        
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    }
+        
+li a:hover {
+    background-color: #333;
+    }
+
+
+.active {
+  background-color: #111;
+}
+
+</style>
+
+<title> {{ title }} </title>
 </head>
-<body>
-<h1>{{  title  }} Page</h1>
-{% block body_content %}{% endblock %}
+
+
+<body style="background-color:rgb(239, 244, 245);">
+<ul>
+<div class=navbar>
+
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('car') }}">Car</a></li>
+        <li><a href="{{ url_for('parts') }}">Parts</a></li>
+
+
+
+    </ul>
+
+
+</div>
+{% block body_content %}
+
+
+
+
+{% endblock body_content %}
 </body>
+
 </html>

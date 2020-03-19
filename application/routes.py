@@ -7,3 +7,11 @@ from application import app
 @app.route('/home')
 def home():
  return render_template('home.html', title='Home')
+
+ @app.route('/car')
+def car():
+ return render_template('car.html', title='car')
+
+ @app.route('/parts')
+def parts():
+ return render_template('parts.html', title='parts')
