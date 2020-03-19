@@ -1,0 +1,13 @@
+[Unit]
+Description=Car_Parts_App (point2repo)
+[Service]
+User=pythonadm
+WorkingDirectory=/opt/myproject
+ExecStart=/bin/bash \
+	-c 'cd /opt/myproject && \
+	source ./venv/bin/activate && \
+	flask run --host=0.0.0.0'
+Environment=SECRET_KEY={{SECRET_KEY}}
+Environment=DATABASE_URI=mysql+pymysql://{{MYSQL_USER}}:{{MYSQL_PASSWORD}}@{{MYSQL_HOST}}/{{MYSQL_DATABASE}}
+[Install]
+WantedBy=multi-user.target
