@@ -15,11 +15,11 @@ class Car(db.Model):
 
 
 
-class part(db.Model):
+class Part(db.Model):
     part_id = db.Column(db.Integer, primary_key=True)
     part_name = db.Column(db.String(500), nullable=False)
     part_desc = db.Column(db.String(500), nullable=False)
-    price = db.Column(db.Decimal(5,2), nullable=False)
+    price = db.Column(db.Integer, nullable=False)
     cars_id = db.Column(db.Integer, db.ForeignKey('car.id'), nullable=False)
 
 
