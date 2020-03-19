@@ -1,7 +1,7 @@
 # import Flask class from the flask module
+from os import getenv
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy 
-
+from flask_sqlalchemy import SQLAlchemy
 
 
 # create a new instance of Flask and store it in app 
