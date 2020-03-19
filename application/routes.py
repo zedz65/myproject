@@ -8,10 +8,10 @@ from application import app
 def home():
  return render_template('home.html', title='Home')
 
- @app.route('/car')
+@app.route('/car')
 def car():
  return render_template('car.html', title='car')
 
- @app.route('/parts')
+@app.route('/parts')
 def parts():
  return render_template('parts.html', title='parts')
