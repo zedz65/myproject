@@ -10,6 +10,7 @@ from application.models import Car
 def home():
  carData = Car.query.first()
  return render_template('home.html', title='Home', car=carData)
+# This defines your data as a variable and passes that variable to your template.
 
 @app.route('/car')
 def car():
