@@ -13,3 +13,19 @@ class Car(db.Model):
             'Year: ', self.year, '\r\n', self.reg
             ])
 
+
+
+class part(db.Model):
+    part_id = db.Column(db.Integer, primary_key=True)
+    part_name = db.Column(db.String(500), nullable=False)
+    part_desc = db.Column(db.String(500), nullable=False)
+    price = db.Column(db.Decimal(5,2), nullable=False)
+    cars_id = db.Column(db.Integer, db.ForeignKey('car.id'), nullable=False)
+
+
+    def __repr__(self):
+        return ''.join([
+            'Part: ', self.part_name, ' ', self.part_desc, '\r\n',
+            'Car_id: ', self.car_id, '\r\n', self.price
+            ])
+
