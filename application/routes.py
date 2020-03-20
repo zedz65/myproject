@@ -9,7 +9,7 @@ from application.forms import CarForm
 def home():
  carData = Car.query.first()
  return render_template('home.html', title='Home', car=carData)
-# This defines your data as a variable and passes that variable to your template.
+
 
 @app.route('/car', methods=['GET', 'POST']) #Get = read Post = Write
 def car():
