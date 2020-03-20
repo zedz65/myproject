@@ -1,4 +1,21 @@
 {% extends "layout.html" %}
 {% block body_content %}
-    <p1> Please enter car details: </p1>
+    <div class='form'>
+        <form method='POST' action=''>
+            {{ form.hidden_tag() }}
+            {{ form.make.label }}
+            {{ form.make }}
+            <br>
+            {{ form.model.label }}
+            {{ form.model }}
+            <br>
+            {{ form.year.label }}
+            {{ form.year }}
+            <br>
+            {{ form.reg.label }}
+            {{ form.reg }}
+            <br>
+            {{ form.submit }}
+        </form>
+    </div>
 {% endblock %}
