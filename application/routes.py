@@ -1,10 +1,8 @@
-# import render_template function from the flask module
 from flask import render_template, redirect, url_for
-# import the app object from the ./application/__init__.py
 from application import app, db
-
-from application.models import Car
+from application.models import Car, Part
 from application.forms import CarForm
+
 # define routes for / & /home, this function will be called when these are accessed
 @app.route('/')
 @app.route('/home')
