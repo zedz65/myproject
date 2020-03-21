@@ -28,6 +28,6 @@ class Part(db.Model):
     def __repr__(self):
         return ''.join([
             'Part: ', self.part_name, ' ', self.part_desc, '\r\n',
-            'Car_id: ', self.car_id, '\r\n', self.price
+            'Car_id: ', self.cars_id, '\r\n', self.price
             ])
 
