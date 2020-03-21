@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for
 from application import app, db
 from application.models import Car, Part
-from application.forms import CarForm
+from application.forms import CarForm, PartForm
 
 # define routes for / & /home, this function will be called when these are accessed
 @app.route('/')
