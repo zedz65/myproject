@@ -48,7 +48,7 @@ class PartForm(FlaskForm):
             Length(min=2, max=500)
         ]
     )
-    Price = StringField('Price',
+    price = StringField('Price',
         validators = [
             DataRequired(),
             Length(min=1, max=7)
