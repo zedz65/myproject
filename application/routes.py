@@ -43,7 +43,7 @@ def parts():
             part_name=form.part_name.data,
             part_desc=form.part_desc.data,
             price=form.price.data,
-            car=parts
+            
         )
 
         db.session.add(partData)
