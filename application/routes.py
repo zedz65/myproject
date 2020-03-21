@@ -35,9 +35,24 @@ def car():
 
 
 
-@app.route('/parts')
+@app.route('/parts', methods=['GET', 'POST'])
 def parts():
- return render_template('parts.html', title='parts')
 
+    form = PartForm()
+    if form.validate_on_submit():
+        partData = Part(
+            part_name=form.part_name.data,
+            part_desc=form.part_desc.data,
+            price=form.price.data,
+            car=parts
+        )
 
+        db.session.add(partData)
+        db.session.commit()
+        return redirect(url_for('home'))
+
+    else:
+        print(form.errors)
+
+    return render_template('parts.html', title='parts', form=form)
 
