@@ -7,7 +7,7 @@ from application.forms import CarForm
 @app.route('/')
 @app.route('/home')
 def home():
- carData = Car.query.first()
+ carData = Car.query.all()
  return render_template('home.html', title='Home', car=carData)
 
 
