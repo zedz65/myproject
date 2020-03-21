@@ -37,8 +37,7 @@ def car():
 
 @app.route('/parts', methods=['GET', 'POST'])
 def parts():
-
-    form = PartForm()
+    form = PartsForm()
     if form.validate_on_submit():
         partData = Part(
             part_name=form.part_name.data,
