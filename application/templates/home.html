@@ -2,7 +2,7 @@
 {% block body_content %}
     <h1>Home Page</h1>
     <p>Welcome to the car app!</p>
-    {% for car in carData %} 
+    {% for carData in car %} 
         <div>
             <h2>{{ car.make }} {{ car.model }} {{ car.year }} {{ car.reg }}</h2>
         </div>
