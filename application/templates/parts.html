@@ -1,4 +1,56 @@
 {% extends "layout.html" %}
 {% block body_content %}
-    <p1> select the parts you require for your vehicle: </p1>
-{% endblock %}
+
+
+<h1>{{ title }}</h1>
+<!-- container for the form -->
+<!-- the 'form-group' class means that the items in the form will be grouped correctly when displayed -->
+<br>
+<div class="form">
+	<!-- the form -->
+
+	<form method="POST" action="">
+		{{ form.hidden_tag() }}
+		<div class="form-group">
+			{{ form.part_name.label }}
+			{{ form.part_name }}
+			{% if form.part_name.errors %}
+			<div class="error">
+				{% for error in form.part_name.errors %}
+				    <span>{{ error }}</span>
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div>
+		<br>
+		<div class="form-group">
+			{{ form.part_desc.label }}
+			{{ form.part_desc }}
+			{% if form.part_desc.errors %}
+			<div class="error">
+				{% for error in form.part_desc.errors %}
+				    <span>{{ error }}</span>
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div>
+        <br>
+        <div class="form-group">
+			{{ form.price.label }}
+			{{ form.price }}
+			{% if form.price.errors %}
+			<div class="error">
+				{% for error in form.price.errors %}
+				    <span>{{ error }}</span>
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div>
+		<br>
+		<div class="form-group">
+		    {{ form.submit }}
+		</div>
+	</form>
+</div>
+{% endblock body_content %}
+
