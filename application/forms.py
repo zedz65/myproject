@@ -35,7 +35,7 @@ class CarForm(FlaskForm):
 
 
 #Form for Parts
-    class PartForm(FlaskForm):
+class PartForm(FlaskForm):
     part_name = StringField('Part Name',
         validators = [
             DataRequired(),
