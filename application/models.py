@@ -6,7 +6,7 @@ class Car(db.Model):
     model = db.Column(db.String(30), nullable=False)
     year = db.Column(db.Integer, nullable=False)
     reg = db.Column(db.String(7), nullable=False, unique=True)
-    parts = db.relationship('Part')
+    parts = db.relationship('Part', lazy=True)
     #parts = db.relationship('Part', backref='cars_id', lazy=True)
 
     def __repr__(self):
