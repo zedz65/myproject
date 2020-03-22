@@ -46,7 +46,7 @@ def parts():
             price=form.price.data
             
         )
-        db.sessions.add(cars_id)
+     
         db.session.add(partData)
         db.session.commit()
         return redirect(url_for('home'))
