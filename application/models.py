@@ -23,7 +23,7 @@ class Part(db.Model):
     part_desc = db.Column(db.String(500), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     cars_id = db.Column(db.Integer, db.ForeignKey('Car.car_id'), nullable=False)
-    car = db.relationship('Car', back_populates='parts')
+    #car = db.relationship('Car', back_populates='parts')
 
 
     def __repr__(self):
