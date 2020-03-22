@@ -9,12 +9,12 @@ class Car(db.Model):
     #parts = db.relationship('Part')
     parts = db.relationship('Part', backref='parts', lazy=True)
 
-    def __repr__(self):
-        return ''.join([
-            'Car_ID: ',self.car_id, '\r\n',
-            'Car: ', self.make, ' ', self.model, '\r\n',
-            'Year: ', self.year, '\r\n', str(self.reg)
-            ])
+    # def __repr__(self):
+    #     return ''.join([
+    #         'Car_ID: ',self.car_id, '\r\n',
+    #         'Car: ', self.make, ' ', self.model, '\r\n',
+    #         'Year: ', self.year, '\r\n', str(self.reg)
+    #         ])
 
 
 
