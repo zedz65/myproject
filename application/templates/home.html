@@ -8,11 +8,15 @@
             <h2>
                 {% for car in cars %}
                 YOUR CAR DETAILS<br>
-                <p>Make: {{ car.make }} Model: {{ car.model }} Year: {{ car.year }} Reg: {{ car.reg }}
+                <p>Make: {{ car.make }} Model: {{ car.model }} Year: {{ car.year }} Reg: {{ car.reg }}</p>
                 {% endfor %}
+                
+                <br>
+                =======================================================================
+                <br>
 
                 {% for part in parts %}
-                {{ part.part_desc }}
+                <p>{{ car.cars_id}} {{ part.part_name }} {{part.part_desc }} {{ part.price }}</p>
                 {% endfor %}
             </h2>
         </div>
