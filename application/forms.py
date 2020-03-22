@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, BooleanField
 from wtforms.validators import DataRequired, Length, ValidationError
-#from application.models import Car
+from application.models import Car, Part
 
 class CarForm(FlaskForm):
     make = StringField('Enter Make',
