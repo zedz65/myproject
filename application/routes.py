@@ -25,7 +25,7 @@ def car():
         db.session.add(carData)
         db.session.commit()
 
-        return redirect(url_for('home'))
+        return redirect(url_for('part'))
 
     else:
         print(form.errors)
