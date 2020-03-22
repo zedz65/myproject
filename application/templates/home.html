@@ -6,9 +6,10 @@
         <div>
             
             <h2>
+                {% for car in cars %}
                 YOUR CAR DETAILS<br>
                 <p>Make: {{ car.make }} Model: {{ car.model }} Year: {{ car.year }} Reg: {{ car.reg }}
-
+                {% endfor %}
             </h2>
         </div>
 
