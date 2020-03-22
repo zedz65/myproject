@@ -37,6 +37,13 @@ class CarForm(FlaskForm):
 
 #Form for Parts
 class PartForm(FlaskForm):
+
+
+    cars_id = QuerySelectField('Car ID',
+    query_factory=lambda: db.session.query(Cars).all(),
+    allow_blank=False)
+
+
     part_name = StringField('Part Name',
         validators = [
             DataRequired(),

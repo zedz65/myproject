@@ -10,7 +10,21 @@
 	<!-- the form -->
 
 	<form method="POST" action="">
-		{{ form.hidden_tag() }}
+        {{ form.hidden_tag() }}
+        
+        <div class="form-group">
+			{{ form.cars_id.label }}
+			{{ form.cars_id }}
+			{% if form.cars_id.errors %}
+			<div class="error">
+				{% for error in form.cars_id.errors %}
+				    <span>{{ error }}</span>
+				{% endfor %}
+			</div>
+			{% endif %}
+		</div>
+        <br>
+        
 		<div class="form-group">
 			{{ form.part_name.label }}
 			{{ form.part_name }}
