@@ -11,7 +11,7 @@ class Car(db.Model):
 
     def __repr__(self):
         return ''.join([
-            'Car_ID: ',str(self.car_id), '\r\n',
+            'Car_ID: ',self.car_id, '\r\n',
             'Car: ', self.make, ' ', self.model, '\r\n',
             'Year: ', self.year, '\r\n', self.reg
             ])
