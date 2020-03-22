@@ -47,7 +47,7 @@ def parts():
             
         )
 
-        db.session.append.part(Car())
+        db.session.append.(cars_id.Car)
         db.session.add(partData)
         db.session.commit()
         return redirect(url_for('home'))
