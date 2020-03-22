@@ -43,7 +43,7 @@ def parts():
             cars_id=form.cars_id.data,
             part_name=form.part_name.data,
             part_desc=form.part_desc.data,
-            price=form.price.data,
+            price=form.price.data
             
         )
 
