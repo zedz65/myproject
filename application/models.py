@@ -6,8 +6,8 @@ class Car(db.Model):
     model = db.Column(db.String(30), nullable=False)
     year = db.Column(db.Integer, nullable=False)
     reg = db.Column(db.String(7), nullable=False, unique=True)
-    #parts = db.relationship('Part', back_populates='car.car_id')
-    parts = db.relationship('Part', backref='cars_id', lazy=True)
+    parts = db.relationship('Part', back_populates='car.car_id')
+    #parts = db.relationship('Part', backref='cars_id', lazy=True)
 
     def __repr__(self):
         return ''.join([
@@ -22,8 +22,8 @@ class Part(db.Model):
     part_name = db.Column(db.String(500), nullable=False)
     part_desc = db.Column(db.String(500), nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    cars_id = db.Column(db.Integer, db.ForeignKey('car.car_id'), nullable=False)
-    #car = db.relationship('Car', back_populates='parts')
+    cars_id = db.Column(db.Integer, db.ForeignKey('Car.car_id'), nullable=False)
+    car = db.relationship('Car', back_populates='parts')
 
 
     def __repr__(self):
