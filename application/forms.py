@@ -41,7 +41,7 @@ class PartForm(FlaskForm):
 
 
     cars_id = QuerySelectField('Car ID',
-    query_factory=lambda: db.session.query(Cars).all(),
+    query_factory=lambda: Car.query.all(),
     allow_blank=False)
 
 
