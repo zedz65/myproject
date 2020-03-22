@@ -5,10 +5,10 @@
     </h1>
         <div>
             
-            <h1>
+            <h3>
                 {% for car in cars %}
                 YOUR CAR DETAILS<br>
-                <p>Make: {{ car.make }} Model: {{ car.model }} Year: {{ car.year }} Reg: {{ car.reg }}</p>
+                <p>ID: {{ car.car_id }} Make: {{ car.make }} Model: {{ car.model }} Year: {{ car.year }} Reg: {{ car.reg }}</p>
                 {% endfor %}
                 
                 <br>
@@ -20,7 +20,7 @@
                 <p>Car ID:{{ part.cars_id}} Part Name:{{ part.part_name }} Part Desc:{{part.part_desc }} Price:{{ part.price }}</p>
 
                 {% endfor %}
-            </h1>
+            </h3>
         </div>
 
 
