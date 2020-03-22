@@ -16,6 +16,7 @@ def car():
     form = CarForm()
     if form.validate_on_submit():
         carData = Car(
+            car = form.car_id.data
             make = form.make.data,
             model = form.model.data,
             year = form.year.data,
