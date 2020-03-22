@@ -10,6 +10,10 @@
                 YOUR CAR DETAILS<br>
                 <p>Make: {{ car.make }} Model: {{ car.model }} Year: {{ car.year }} Reg: {{ car.reg }}
                 {% endfor %}
+
+                {% for part in parts %}
+                {{ part.part_desc }}
+                {% endfor %}
             </h2>
         </div>
 

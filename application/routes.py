@@ -8,7 +8,8 @@ from application.forms import CarForm, PartForm
 @app.route('/home')
 def home():
  carData = Car.query.all()
- return render_template('home.html', title='Home', cars=carData)
+ partData = Part.query.all()
+ return render_template('home.html', title='Home', cars=carData, parts=partData)
 
 
 @app.route('/car', methods=['GET', 'POST']) #Get = read Post = Write
