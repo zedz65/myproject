@@ -7,7 +7,7 @@ from application.forms import CarForm, PartForm
 @app.route('/')
 @app.route('/home')
 def home():
- carData = Car.query.all()
+ carData = Car.query.first()
  return render_template('home.html', title='Home', car=carData)
 
 
@@ -16,7 +16,6 @@ def car():
     form = CarForm()
     if form.validate_on_submit():
         carData = Car(
-            car = form.car_id.data,
             make = form.make.data,
             model = form.model.data,
             year = form.year.data,
@@ -41,6 +40,7 @@ def parts():
     form = PartForm()
     if form.validate_on_submit():
         partData = Part(
+            cars_id=form.cars_id.data,
             part_name=form.part_name.data,
             part_desc=form.part_desc.data,
             price=form.price.data,
