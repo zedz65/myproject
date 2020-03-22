@@ -13,7 +13,7 @@ class Car(db.Model):
         return ''.join([
             'Car_ID: ',self.car_id, '\r\n',
             'Car: ', self.make, ' ', self.model, '\r\n',
-            'Year: ', self.year, '\r\n', self.reg
+            'Year: ', str(self.year), '\r\n', str(self.reg)
             ])
 
 
