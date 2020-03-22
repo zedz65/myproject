@@ -40,14 +40,14 @@ def parts():
     form = PartForm()
     if form.validate_on_submit():
         partData = Part(
-            cars_id=form.cars_id.data,
+            #cars_id=form.cars_id.data,
             part_name=form.part_name.data,
             part_desc=form.part_desc.data,
             price=form.price.data
             
         )
 
-        db.session.cars_id.part(Part())
+        db.session.cars_id.append.part(Car())
         db.session.add(partData)
         db.session.commit()
         return redirect(url_for('home'))
