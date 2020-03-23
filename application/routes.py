@@ -68,7 +68,7 @@ def part_delete():
 
 @app.route("/parts/update", methods=["GET", "POST"])
 def parts_update():
-    Part.query.get(part_id)
+    Part.query.get()
     parts = "new"
     db.session.commit()
 
