@@ -66,3 +66,33 @@ class PartForm(FlaskForm):
 
     
     submit = SubmitField('Submit')
+
+
+    class UpdatePartsForm(FlaskForm):
+
+    part_name = StringField('Part Name',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=500)
+        ]
+    )
+    part_desc = StringField('Part Description',
+        validators = [
+            DataRequired(),
+            Length(min=2, max=500)
+        ]
+    )
+    price = StringField('Price',
+        validators = [
+            DataRequired(),
+            Length(min=1, max=7)
+        ]
+    )
+
+    submit = SubmitField('Update')
+
+    def validate_email(self,email):
+        if email.data != current_user.email:
+            user = Users.query.filter_by(email=email.data).first()
+            if user:
+                raise ValidationError('Email already in use')

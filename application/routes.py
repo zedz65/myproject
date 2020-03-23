@@ -1,7 +1,7 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request
 from application import app, db
 from application.models import Car, Part
-from application.forms import CarForm, PartForm
+from application.forms import CarForm, PartForm, UpdatePartsForm
 
 # define routes for / & /home, this function will be called when these are accessed
 @app.route('/')
@@ -35,9 +35,6 @@ def car():
 
 
 
-
-
-
 @app.route('/parts', methods=['GET', 'POST'])
 def parts():
     form = PartForm()
@@ -68,4 +65,17 @@ def part_delete():
     return redirect(url_for('home'))
 
 
+
+@app.route('/parts/update', methods=['GET', 'POST'])
+
+def parts_update():
+    form = UpdatePartsForm()
+    if form.validate_on_submit():
+        part_name=form.part_name.data,
+        part_desc=form.part_desc.data,
+        price=form.price.data
+        db.session.commit()
+        return redirect(url_for('parts'))
+
+    return render_template('parts.html', title='parts', form=form)
 
