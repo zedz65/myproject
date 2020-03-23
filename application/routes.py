@@ -61,8 +61,8 @@ def parts():
 @app.route("/parts/delete", methods=["GET", "POST"])
 
 def part_delete():
-    ##part = current_part.idcccc
-    partlist = Part.query.filter_by(part_id=part).first()
+    #part = current_part
+    partlist = Part.query.all()
     db.session.delete(partlist)
     db.session.commit()
     return redirect(url_for('home'))
