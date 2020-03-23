@@ -58,12 +58,12 @@ def parts():
     return render_template('parts.html', title='parts', form=form)
 
 
-@app.route("/part/delete", methods=["GET", "POST"])
+@app.route("/parts/delete", methods=["GET", "POST"])
 
 def part_delete():
     ##part = current_part.idcccc
     partlist = Part.query.filter_by(part_id=1).first()
-    db.session.delete(partlist)
+    db.session.delete(partData)
     db.session.commit()
     return redirect(url_for('home')
 
