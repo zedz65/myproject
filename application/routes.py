@@ -62,8 +62,10 @@ def parts():
 
 def part_delete():
     ##part = current_part.idcccc
-    partlist = Part.query.filter_by(part_id=1).first()
+    partlist = Part.query.filter_by(part_id=part).first()
     db.session.delete(partlist)
     db.session.commit()
     return redirect(url_for('home'))
+
+
 
