@@ -67,15 +67,18 @@ def part_delete():
 
 
 @app.route('/parts/update', methods=['GET', 'POST'])
+def parts_update(part_id):
+    item = Part.query.get(part_id),
+    item.name = "newname",
+    db.session.commit()
 
-def parts_update():
-    form = UpdatePartsForm()
-    if form.validate_on_submit():
-        part_name=form.part_name.data,
-        part_desc=form.part_desc.data,
-        price=form.price.data
-        db.session.commit()
-        return redirect(url_for('parts'))
+#form = UpdatePartsForm()
+ #   if form.validate_on_submit():
+  #      part_name=form.part_name.data,
+   #     part_desc=form.part_desc.data,
+    #    price=form.price.data
+     #   db.session.commit()
+      #  return redirect(url_for('parts'))
 
-    return render_template('parts.html', title='parts', form=form)
+    #return render_template('parts.html', title='parts', form=form)
 
