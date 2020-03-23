@@ -68,7 +68,8 @@ class PartForm(FlaskForm):
     submit = SubmitField('Submit')
 
 
-    class UpdatePartsForm(FlaskForm):
+class UpdatePartsForm(FlaskForm):
+
 
     part_name = StringField('Part Name',
         validators = [
@@ -91,8 +92,4 @@ class PartForm(FlaskForm):
 
     submit = SubmitField('Update')
 
-    def validate_email(self,email):
-        if email.data != current_user.email:
-            user = Users.query.filter_by(email=email.data).first()
-            if user:
-                raise ValidationError('Email already in use')
+   
