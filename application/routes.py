@@ -37,7 +37,7 @@ def car():
 @app.route("/part/delete", methods=["GET", "POST"])
 
 def part_delete():
-    #part = current_part.id
+    ##part = current_part.idcccc
     partlist = Part.query.filter_by(part_id=1).first()
     db.session.delete(partlist)
     db.session.commit()
