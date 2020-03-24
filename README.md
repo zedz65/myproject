@@ -28,6 +28,8 @@ The database is working and allows the user to add a car and add parts to the li
 
 Initial plan was to create three tables, table 1 would be car, table 2 would be parts and table 3 would be a middle table called orders linking the 2 as they would be many to many.
 
+![erd](https://github.com/zedz65/myproject/blob/master/Documentation/erd.jpg)
+
 ## Solution:
 
 However the solution that was delivered was based on a 2 table solution, compromising of table 1 Car and table 2 Parts, with a one to many relationship. Therefore one car could have many parts which seemed a logically solution based on the conditions and time constraints we had.
